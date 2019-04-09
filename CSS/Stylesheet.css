@@ -34,6 +34,7 @@ body {
   width: 99%;
   height: auto;
   border-bottom: 1px solid #000;
+  border-radius: 5px;
   background-color: #2F3531;
 }
 
@@ -143,6 +144,12 @@ body {
   border-radius: 5px;
   border-style: groove;
   box-shadow: 10px 10px 5px grey;
+   -o-transition: all 1s ease-out;
+   transition: all 1s ease-out;
+}
+
+.review:hover > .to-hidden {
+  display: flex;
 }
 
 .to-show {
@@ -167,10 +174,12 @@ body {
 }
 
 .to-hidden {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+ -o-transition: all 1s ease-out;
+ transition: all 1s ease-out;
 }
 
 .to-hidden img {
@@ -182,4 +191,5 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+   -o-transition: all 1s ease-out;
 }
