@@ -123,29 +123,18 @@ body {
   margin: 1%;
 }
 
-.review-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin: 1%;
-  width: 98%;
-  height: 250px;
-}
-
 .review {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  margin: 5%;
-  width: 33%;
+  margin: 1%;
+  width: 75%;
   height: 220px;
   border-radius: 5px;
   border-style: groove;
   box-shadow: 10px 10px 5px grey;
-   -o-transition: all 1s ease-out;
-   transition: all 1s ease-out;
+  transition: all 0.5s ease;
 }
 
 .review:hover > .to-hidden {
@@ -155,6 +144,7 @@ body {
 .to-show {
   display: flex;
   flex-direction: row;
+  margin: 5%;
 }
 
 .image {
@@ -176,10 +166,8 @@ body {
 .to-hidden {
   display: none;
   flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
- -o-transition: all 1s ease-out;
- transition: all 1s ease-out;
+  justify-content: flex-end;
+  margin-left: 45%;
 }
 
 .to-hidden img {
@@ -191,5 +179,4 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-   -o-transition: all 1s ease-out;
 }
