@@ -46,8 +46,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
   CONSTRAINT FK_Device_Review FOREIGN KEY (ID_Device) REFERENCES Devices (ID_Device)
 );
 
-INSERT INTO Reviews(Review_name, Content) VALUES
-  ('Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('WTF!', 'BlaBlaBlaBlaBlaBlaBla');
+INSERT INTO Reviews (ID_user, ID_device, Review_name, Content) VALUES
+  ('1', '1', 'Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '2', 'The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '3', 'The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '4', 'WTF!', 'BlaBlaBlaBlaBlaBlaBla');
