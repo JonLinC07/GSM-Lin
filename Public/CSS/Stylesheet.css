@@ -129,12 +129,16 @@ body {
   justify-content: flex-start;
   align-items: center;
   margin: 1%;
+  margin-top: 1%;
   width: 75%;
   height: 220px;
   border-radius: 5px;
   border-style: groove;
   box-shadow: 10px 10px 5px grey;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .review:hover > .to-hidden {
@@ -179,4 +183,24 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.create-button {
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  margin: 1%;
+  margin-bottom: 0%;
+}
+
+.create-button img {
+  width: 75px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.create-button img:hover {
+  width: 85px;
 }
