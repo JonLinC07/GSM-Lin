@@ -206,3 +206,55 @@ body {
 }
 
 /*          CREATE           */
+
+.content-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4%;
+  width: 98%;
+}
+
+.content-create h2 {
+  font-size: 2em;
+}
+
+.form-review {
+  width: 100%;
+}
+
+.title-phone {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 98%;
+  font-size: 1.2em
+}
+
+.title h3, input, option {
+  margin: 1%;
+}
+
+.image-review {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 65%;
+  margin: 2%;
+}
+
+.text-review {
+  display: flex;
+  justify-content: center;
+}
+
+.text-review textarea {
+  width: 75%;
+}
