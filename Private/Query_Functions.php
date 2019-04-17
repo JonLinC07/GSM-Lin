@@ -1,7 +1,7 @@
 <?php
   function find_all_reviews() {
     global $db;
-    $query = "SELECT * FROM Reviews ORDER BY Folio ASC";
+    $query = "SELECT * FROM reviews ORDER BY Folio ASC";
     $result = mysqli_query($db, $query);
     confirm_result_set($result);
     return $result;
@@ -18,7 +18,7 @@
   }
 
   function insert_review($review) {
-    
+
   }
 
   function find_all_devices() {

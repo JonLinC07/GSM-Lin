@@ -12,7 +12,7 @@
 
   require_once('Functions.php');
   require_once('Database.php');
-  require_once('Query_Functions');
+  require_once('Query_Functions.php');
 
   $db = DB_connect();
  ?>

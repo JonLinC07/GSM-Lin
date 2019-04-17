@@ -1,7 +1,7 @@
 <?php
-  require(DB_credentials.php);
+  require('DB_credentials.php');
 
-  function DB_conect() {
+  function DB_connect() {
     $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
     confirm_db_connect();
     return $connection;
@@ -22,8 +22,8 @@
   }
 
   function confirm_result_set($result_set) {
-    if ("$result_set") {
-      exit("Database query failed.";)
+    if ($result_set) {
+      exit("Database query failed.");
     }
   }
 

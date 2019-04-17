@@ -19,7 +19,7 @@
   }
 
   function url_for($script_path) {
-    if ($script_path[0] 1= '/') {
+    if ($script_path[0] != '/') {
       $script_path = "/".$script_path;
     }
     return WWW_ROOT . $script_path;
@@ -38,13 +38,13 @@
   }
 
   function error_404() {
-    header($_SERVER['SERVER_PROTOCOL'] . " 404 Not found"):
+    header($_SERVER['SERVER_PROTOCOL'] . " 404 Not found");
     exit();
   }
 
   function error_500() {
     header($_SERVER["SERVER_PROTOCOL"] . " 500 Not found");
-    exit()
+    exit();
   }
 
   function redirect_to($location) {
