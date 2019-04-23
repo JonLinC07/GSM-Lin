@@ -1,8 +1,8 @@
 <?php
   function find_all_reviews() {
     global $db;
-    $query = "SELECT * FROM reviews ORDER BY Folio ASC";
-    $result = mysqli_query($db, $query);
+    $query = "SELECT * FROM Reviews";
+    $result=mysqli_query($db,$query);
     confirm_result_set($result);
     return $result;
   }
@@ -23,7 +23,7 @@
 
   function find_all_devices() {
     global $db;
-    $query = "SLECT * FROM Devices ORDER BY ID_Device ASC";
+    $query = "SELECT * FROM Devices ORDER BY ID_Device ASC";
     $result = mysqli_query($db, $query);
     confirm_result_set($result);
     return $result;

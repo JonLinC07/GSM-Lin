@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../../Public/css/Stylesheet.css">
     <?php
       require_once('../../Private/Initialize.php');
+
       $reviews_set = find_all_reviews();
     ?>
     <title>GSM - Lin</title>
@@ -17,7 +18,7 @@
       </div>
 
       <nav class="menu-bar">
-        <a href="Index.html"> REVIEWS </a>
+        <a href="Index.php"> REVIEWS </a>
         <a href="Phones.php"> PHONES </a>
         <a href="Android.php"> ANDROID </a>
         <a href="Ios.php"> iOS </a>
@@ -34,40 +35,46 @@
         <a href="Create.html"> <img src="../Images/Create.png" alt=""> </a>
       </div>
 
-      <div class="review">
-        <div class="to-show">
-          <div class="image">
-            <img src="../../Public/Images/Phones/GalaxyS105G.jpg" alt="">
-          </div>
+      <?php while($review = mysqli_fetch_assoc($reviews_set)) { ?>
 
-          <div class="info-review">
-            <div class="title">
-                <h3>Title</h3>
+        <div class="review">
+          <div class="to-show">
+            <div class="image">
+              <img src="../../Public/Images/Phones/<?php echo h($review['Image']); ?>" alt="">
             </div>
 
-            <p>Upload Date</p>
-            <p>Last Upload Date</p>
+            <div class="info-review">
+              <div class="title">
+                  <h3><?php echo h($review['Review_name']); ?></h3>
+              </div>
+
+              <p><?php echo h($review['Upload_date']); ?></p>
+              <p><?php echo h($review['Last_upload_date']); ?></p>
+            </div>
+          </div>
+
+          <div class="to-hidden">
+            <div class="hide">
+              <h6>Edit</h6>
+              <a href="#"><img src="../../Public/Images/Edit.png" alt=""></a>
+            </div>
+
+            <div class="hide">
+              <h6>Preview</h6>
+              <a href="#"><img src="../../Public/Images/Show.png" alt=""></a>
+            </div>
+
+            <div class="hide">
+              <h6>Delete</h6>
+              <a href="#"><img src="../../Public/Images/Delete.png" alt=""></a>
+            </div>
           </div>
         </div>
+      <?php } ?>
 
-        <div class="to-hidden">
-          <div class="hide">
-            <h6>Edit</h6>
-            <a href="#"><img src="../../Public/Images/Edit.png" alt=""></a>
-          </div>
-
-          <div class="hide">
-            <h6>Preview</h6>
-            <a href="#"><img src="../../Public/Images/Show.png" alt=""></a>
-          </div>
-
-          <div class="hide">
-            <h6>Delete</h6>
-            <a href="#"><img src="../../Public/Images/Delete.png" alt=""></a>
-          </div>
-        </div>
-      </div>
     </div>
+
+    <?php mysqli_free_result($reviews_set); ?>
 
 
 <!--

@@ -15,12 +15,12 @@
       </div>
 
       <nav class="menu-bar">
-        <a href="Index.html"> HOME </a>
-        <a href="Phones.html"> PHONES </a>
-        <a href="Android.html"> ANDROID </a>
-        <a href="Ios.html"> iOS </a>
-        <a href="Login.html"> LOGIN </a>
-        <a href="About.html"> GSM Lin </a>
+        <a href="Index.php"> HOME </a>
+        <a href="Phones.php"> PHONES </a>
+        <a href="Android.php"> ANDROID </a>
+        <a href="Ios.php"> iOS </a>
+        <a href="Login.php"> LOGIN </a>
+        <a href="About.php"> GSM Lin </a>
       </nav>
 
       <div class="content-slider">

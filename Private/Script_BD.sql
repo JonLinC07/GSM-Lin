@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Users (
   User_name VARCHAR(255) NOT NULL,
   Nick_name VARCHAR(255) NOT NULL,
   Password VARCHAR(255) NOT NULL,
+  Image VARCHAR(255) NOT NULL,
   PRIMARY KEY (ID_user)
 );
 
@@ -34,6 +35,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
   Folio INT(11) NOT NULL AUTO_INCREMENT,
   ID_User INT(11),
   ID_Device INT(11),
+  Upload_date DATE NOT NULL,
+  Last_upload_date DATE NOT NULL,
   Review_name VARCHAR(255) NOT NULL,
   Content TEXT NOT NULL,
 
@@ -46,8 +49,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
   CONSTRAINT FK_Device_Review FOREIGN KEY (ID_Device) REFERENCES Devices (ID_Device)
 );
 
-INSERT INTO Reviews (ID_user, ID_device, Review_name, Content) VALUES
-  ('1', '1', 'Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '2', 'The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '3', 'The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '4', 'WTF!', 'BlaBlaBlaBlaBlaBlaBla');
+INSERT INTO Reviews (ID_user, ID_device, Upload_date, Last_upload_date, Review_name, Content) VALUES
+  ('1', '1', '2019/04/16', '2019/04/16', 'Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '2', '2019/04/10', '2019/04/16', 'The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '3', '2019/04/01', '2019/04/10', 'The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla'),
+  ('1', '4', '2019/03/04', '2019/04/01', 'WTF!', 'BlaBlaBlaBlaBlaBlaBla');

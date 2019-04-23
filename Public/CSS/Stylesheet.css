@@ -172,6 +172,10 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   margin-left: 45%;
+  -webkit-transition: all 5s ease-out;
+  -moz-transition: all  5s ease-out;
+  -o-transition: all  5s ease-out;
+  transition: all  5s ease-out;
 }
 
 .to-hidden img {

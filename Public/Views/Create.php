@@ -12,7 +12,7 @@
     </div>
 
     <nav class="menu-bar">
-      <a href="Index.html"> REVIEWS </a>
+      <a href="Index.php"> REVIEWS </a>
       <a href="Phones.php"> PHONES </a>
       <a href="Android.php"> ANDROID </a>
       <a href="Ios.php"> iOS </a>
