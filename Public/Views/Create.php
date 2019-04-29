@@ -6,6 +6,21 @@
     <title>Create Review</title>
   </head>
 
+  <?php
+    require('../../Private/Initialize.php');
+    $device_set = find_all_devices();
+    $device_count = mysqli_num_rows($device_set);
+    mysqli_free_result($device_set);
+    $device = [];
+    $device['Device_name'] = $device_count;
+
+    $review_set = find_all_reviews();
+    $review_count = mysqli_num_rows($review_set);
+    mysqli_free_result($review_set);
+    $review = [];
+    $review['ID_Device'] = $review_count;
+   ?>
+
   <body>
     <div class="headers">
 
@@ -26,19 +41,25 @@
       <h2>CREATING REVIEW</h2>
 
       <form class="form-review" action="index.html" method="post">
-        <div class="title-phone">
-          <div class="title">
-            <h3>TITLE</h3>
-            <input type="text" name="title" placeholder="Title">
-          </div>
-
-          <div class="title">
-            <h3>PHONE</h3>
-            <option value="selected"></option>
-          </div>
+        <div class="infos">
+          <input type="text" name="phone-name" value="" placeholder="Title">
+          <input type="text" name="phone-name" value="" placeholder="Phone Name">
+          <input type="date" name="phone-name" value="" placeholder="Phone Name">
+          <select class="device" name="">
+            <?php
+              for ($i=1; $i <= $review_count; $i++) {
+                echo "<option value=\"{$i}\"";
+                if ($review['ID_Device']) {
+                  echo " selected";
+                }
+                echo ">{$i}</option>";
+              }
+             ?>
+          </select>
         </div>
 
-        <div class="image-review">
+        <div class="photo-phone">
+          <h4>Phone Photo</h4>
           <input type="file" name="Upload Photo" value="">
         </div>
 

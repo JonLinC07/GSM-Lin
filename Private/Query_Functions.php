@@ -18,7 +18,12 @@
   }
 
   function insert_review($review) {
-
+    global $db;
+    $query = "INSERT INTO Reviews (ID_Device,  Upload_date, Last_upload_date,";
+    $query .= " Review_name, Content, Image) VALUES ";
+    $query .= "('" . $review['ID_Device'] . "', '" . $review['Upload_date'] . "', ";
+    $query .= " '" . $review['Last_upload_date'] . "', '" . $review['Review_name'] . "', ";
+    $query .= "'" . $review['Content'] . "', " . $review['Image'] . "')";
   }
 
   function find_all_devices() {

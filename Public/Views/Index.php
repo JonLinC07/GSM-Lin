@@ -32,7 +32,7 @@
       <h2>REVIEWS</h2>
 
       <div class="create-button">
-        <a href="Create.html"> <img src="../Images/Create.png" alt=""> </a>
+        <a href="Create.php"> <img src="../Images/Create.png" alt=""> </a>
       </div>
 
       <?php while($review = mysqli_fetch_assoc($reviews_set)) { ?>

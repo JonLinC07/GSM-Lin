@@ -7,17 +7,6 @@
     }
   }
 
-  function validate_page($field, $page) {
-    if (empty($_POST['menu_name'])) {
-      redirect_to(url_for("/staff/pages/new.php"));
-      echo "<script>alert('The name is empty!');</script>";
-    } else {
-      $result = insert_page($page);
-      $new_id = mysqli_insert_id($db);
-      redirect_to(url_for('/staff/pages/show.php?id=' . $new_id));
-    }
-  }
-
   function url_for($script_path) {
     if ($script_path[0] != '/') {
       $script_path = "/".$script_path;
