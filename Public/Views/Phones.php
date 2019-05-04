@@ -2,16 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/Stylesheet.css">
+    <link rel="stylesheet" href="../../Public/css/Stylesheet.css">
     <title>GSM Lin - Phones</title>
   </head>
-  <body>
+  <?php
+    require_once('../../Private/Initialize.php');
+    $device_set = find_all_devices();
+  ?>
 
     <body>
       <div class="headers">
         <header>
           <!-- <img src="Images/Logo2.png" alt="GSM Lin"> -->
         </header>
+
       </div>
 
       <nav class="menu-bar">
@@ -23,43 +27,50 @@
         <a href="About.php"> GSM Lin </a>
       </nav>
 
-      <div class="content-slider">
 
-        <div class="slider">
-          <span id="slider-image-1"></span>
-          <span id="slider-image-2"></span>
-          <span id="slider-image-3"></span>
-          <span id="slider-image-4"></span>
-          <span id="slider-image-5"></span>
-
-          <div class="images">
-            <img src="Images/Phones/GalaxyS105G.jpg" class="slider-image" />
-            <img src="Images/Phones/GV505G.jpg" class="slider-image" />
-            <img src="Images/Phones/IphoneXSMax.jpg" class="slider-image" />
-            <img src="Images/Phones/motoG7.jpg" class="slider-image" />
-            <img src="Images/Phones/u12+.jpg" class="slider-image" />
-          </div>
-        <!--  <div class="button-holder">
-            <a href="#slider-image-1" class="slider-change"></a>
-            <a href="#slider-image-2" class="slider-change"></a>
-            <a href="#slider-image-3" class="slider-change"></a>
-            <a href="#slider-image-4" class="slider-change"></a>
-            <a href="#slider-image-5" class="slider-change"></a>
-          </div>-->
-
-        </div>
         <div class="content">
           <h1>PHONES</h1>
         </div>
-      </div>
 
-      <div class="footer">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="create-button">
+          <a href="Create.php"> <img src="../Images/Create.png" alt=""> </a>
+        </div>
+
+        <div class="content-device">
+        <?php while($device = mysqli_fetch_assoc($device_set)) { ?>
+
+          <div class="device">
+            <div class="to-show">
+
+              <div class="info-review">
+                <div class="title">
+                    <h3><?php echo h($device['Device_name']); ?></h3>
+                </div>
+
+                <p>Brand: <?php echo h($device['Brand']); ?></p>
+                <p>Launch Date: <?php echo h($device['Lauch_date']); ?></p>
+              </div>
+            </div>
+
+            <div class="device-hidden">
+              <div class="hide">
+                <h6>Edit</h6>
+                <a href="#"><img src="../../Public/Images/Edit.png" alt=""></a>
+              </div>
+
+              <div class="hide">
+                <h6>Preview</h6>
+                <a href="#"><img src="../../Public/Images/Show.png" alt=""></a>
+              </div>
+
+              <div class="hide">
+                <h6>Delete</h6>
+                <a href="#"><img src="../../Public/Images/Delete.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+
       </div>
 
   </body>

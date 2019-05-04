@@ -7,7 +7,7 @@
   </head>
 
   <?php
-    require('../../Private/Initialize.php');
+    require_once('../../Private/Initialize.php');
     $device_set = find_all_devices();
     $device_count = mysqli_num_rows($device_set);
     mysqli_free_result($device_set);
@@ -40,12 +40,12 @@
     <div class="content-create">
       <h2>CREATING REVIEW</h2>
 
-      <form class="form-review" action="index.html" method="post">
+      <form class="form-review" action="<?php echo url_for('Views/AddReview.php'); ?>" method="post">
         <div class="infos">
-          <input type="text" name="phone-name" value="" placeholder="Title">
+          <input type="text" name="Review_name" value="" placeholder="Title">
           <input type="text" name="phone-name" value="" placeholder="Phone Name">
-          <input type="date" name="phone-name" value="" placeholder="Phone Name">
-          <select class="device" name="">
+          <input type="date" name="Upload_date" value="" placeholder="Phone Name">
+          <select class="device" name="ID_Device">
             <?php
               for ($i=1; $i <= $review_count; $i++) {
                 echo "<option value=\"{$i}\"";
@@ -60,11 +60,12 @@
 
         <div class="photo-phone">
           <h4>Phone Photo</h4>
-          <input type="file" name="Upload Photo" value="">
+          <input type="file" name="Image" value="">
         </div>
 
         <div class="text-review">
-          <textarea name="Review content" rows="20" cols="80" placeholder="Write the review content"></textarea>
+          <textarea name="Content" rows="20" cols="80" placeholder="Write the review content"></textarea>
+          <input type="submit" value="Create Review" />
         </div>
       </form>
 
