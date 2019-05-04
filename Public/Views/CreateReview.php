@@ -8,12 +8,6 @@
 
   <?php
     require_once('../../Private/Initialize.php');
-    $device_set = find_all_devices();
-    $device_count = mysqli_num_rows($device_set);
-    mysqli_free_result($device_set);
-    $device = [];
-    $device['Device_name'] = $device_count;
-
     $review_set = find_all_reviews();
     $review_count = mysqli_num_rows($review_set);
     mysqli_free_result($review_set);

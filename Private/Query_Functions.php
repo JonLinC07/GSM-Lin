@@ -25,7 +25,6 @@
     $query .= "'" . $review['Last_upload_date'] . "', '" . $review['Review_name'] . "', ";
     $query .= "'" . $review['Content'] . "', '" . $review['Image'] . "')";
 
-    echo $query;
     $result = mysqli_query($db, $query);
     if ($result) {
       return true;
@@ -34,6 +33,25 @@
       db_disconnect($db);
       exit;
     }
+  }
+
+  function insert_device($device) {
+    global $db;
+
+    $query = "INSERT INTO Devices (ID_Device, Brand, Device_name, Lauch_date, Spesifies)";
+    $query .= " VALUES (" . $device['ID_Device'] . ", '" . $device['Brand'] . "', '";
+    $query .= $device['Device_name'] . "', '" . $device['Lauch_date'] . "', '";
+    $query .= $device['Spesifies'] . "')";
+
+    $result = mysqli_query($db, $query);
+    if ($result) {
+      return true;
+    } else {
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+
   }
 
   function find_all_devices() {
@@ -46,7 +64,7 @@
 
   function find_device_by_id($id) {
     global $db;
-    $query = "SELECT * FROM Devices WHERE ID_Devive='" . $id . "'";
+    $query = "SELECT * FROM Devices WHERE ID_Device='" . $id . "'";
     $result = mysqli_query($db, $query);
     confirm_result_set($result);
     $device = mysqli_fetch_assoc($result);

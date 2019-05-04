@@ -33,7 +33,7 @@
         </div>
 
         <div class="create-button">
-          <a href="Create.php"> <img src="../Images/Create.png" alt=""> </a>
+          <a href="CreatePhone.php"> <img src="../Images/Create.png" alt=""> </a>
         </div>
 
         <div class="content-device">

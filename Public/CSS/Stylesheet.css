@@ -343,3 +343,67 @@ body {
 .device:hover > .device-hidden {
   display: flex;
 }
+
+/*         CREATE PHONES          */
+
+.create-device h1 {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+.create-device {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  width: 98%;
+}
+
+.inputs-devices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2%;
+}
+
+.text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.text-area textarea {
+  width: 75%;
+}
+
+.text-area input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin: 2%;
+}
+
+/*         VIEW PHONES          */
+
+.view-device {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2%;
+  width: 50%;
+  border-radius: 5px;
+  border-style: groove;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.view-device h1, h2, h3 {
+  margin: 2%;
+}
+
+.view-device p {
+  margin-top: 1%;
+}
