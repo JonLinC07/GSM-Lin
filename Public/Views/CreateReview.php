@@ -39,7 +39,7 @@
           <input type="text" name="Review_name" value="" placeholder="Title">
           <input type="text" name="phone-name" value="" placeholder="Phone Name">
           <input type="date" name="Upload_date" value="" placeholder="Phone Name">
-          <select class="device" name="ID_Device">
+          <select class="" name="ID_Device">
             <?php
               for ($i=1; $i <= $review_count; $i++) {
                 echo "<option value=\"{$i}\"";

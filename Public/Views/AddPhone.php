@@ -3,7 +3,6 @@
 
   if (is_post_request()) {
     $device = [];
-    $device['ID_Device'] = $_POST['ID_Device'];
     $device['Brand'] = $_POST['Brand'];
     $device['Device_name'] = $_POST['Device_name'];
     $device['Lauch_date'] = $_POST['Launch_date'];

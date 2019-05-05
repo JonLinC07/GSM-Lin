@@ -38,10 +38,9 @@
   function insert_device($device) {
     global $db;
 
-    $query = "INSERT INTO Devices (ID_Device, Brand, Device_name, Lauch_date, Spesifies)";
-    $query .= " VALUES (" . $device['ID_Device'] . ", '" . $device['Brand'] . "', '";
-    $query .= $device['Device_name'] . "', '" . $device['Lauch_date'] . "', '";
-    $query .= $device['Spesifies'] . "')";
+    $query = "INSERT INTO Devices (Brand, Device_name, Lauch_date, Spesifies)";
+    $query .= " VALUES ('" . $device['Brand'] . "', '" . $device['Device_name'];
+    $query .= "', '" . $device['Lauch_date'] . "', '" . $device['Spesifies'] . "')";
 
     $result = mysqli_query($db, $query);
     if ($result) {
@@ -51,7 +50,6 @@
       db_disconnect($db);
       exit;
     }
-
   }
 
   function find_all_devices() {
@@ -70,6 +68,37 @@
     $device = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
     return $device;
+  }
+
+  function delete_device($id) {
+    global $db;
+    $query = "DELETE FROM Devices WHERE ID_Device='" . $id . "' LIMIT 1";
+    $result = mysqli_query($db, $query);
+
+    if ($result) {
+      return true;
+    } else {
+      echo nysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
+
+  function update_device($device) {
+    global $db;
+    $query = "UPDATE Devices SET Brand='" . $device['Brand'] . "', Device_name='";
+    $query .= $device['Device_name'] . "', Lauch_date='" . $device['Lauch_date'] . "', ";
+    $query .= "Spesifies='" . $device['Spesifies'] . "' WHERE ID_Device='";
+    $query .= $device['ID_Device'] . "' LIMIT 1";
+
+    $resul = mysqli_query($db, $query);
+    if ($resul) {
+      return true;
+    } else {
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
   }
 
   function all_info_review($id) {
@@ -91,8 +120,4 @@
     confirm_result_set($result);
     return $result;
   }
-
-
-
-
  ?>

@@ -34,7 +34,7 @@
     <div class="create-device">
       <h1>UPLOAD PHONE</h1>
 
-      <form class="" action="index.html" method="post">
+      <form class="" action="<?php echo url_for('Views/AddPhone.php'); ?>" method="post">
         <div class="inputs-devices">
           <input type="text" name="Device_name" placeholder="Device Name">
           <input type="text" name="Brand" placeholder="Brand">

@@ -3,7 +3,6 @@
 
   if (is_post_request()) {
     $review = [];
-    $review['ID_Device'] = $_POST['ID_Device'] ?? '';
     $review['Upload_date'] = $_POST['Upload_date'] ?? '';
     $review['Last_upload_date'] = $_POST['Upload_date'] ?? '';
     $review['Review_name'] = $_POST['Review_name'] ?? '';

@@ -55,17 +55,17 @@
             <div class="device-hidden">
               <div class="hide">
                 <h6>Edit</h6>
-                <a href="#"><img src="../../Public/Images/Edit.png" alt=""></a>
+                <a href="<?php echo url_for('Views/Edit.php?id=' . h(u($device['ID_Device']))) ?>"><img src="../../Public/Images/Edit.png" alt=""></a>
               </div>
 
               <div class="hide">
                 <h6>Preview</h6>
-                <a href="#"><img src="../../Public/Images/Show.png" alt=""></a>
+                <a href="<?php echo url_for('Views/ViewPhone.php?id=' . h(u($device['ID_Device']))) ?>"><img src="../../Public/Images/Show.png" alt=""></a>
               </div>
 
               <div class="hide">
                 <h6>Delete</h6>
-                <a href="#"><img src="../../Public/Images/Delete.png" alt=""></a>
+                <a href="<?php echo url_for('Views/Delete.php?id=' . h(u($device['ID_Device']))) ?>"><img src="../../Public/Images/Delete.png" alt=""></a>
               </div>
             </div>
           </div>
