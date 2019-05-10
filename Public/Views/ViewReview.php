@@ -10,7 +10,7 @@
     require_once('../../Private/Initialize.php');
 
     $id = $_GET['id'] ?? '1';
-    $review = find_review_by_id($id);
+    $review = all_info_review($id);
 
    ?>
 
@@ -35,10 +35,10 @@
 
     <div class="preview-info">
       <h2><?php echo h($review['Review_name']) ?></h2>
-      <h3>Upload Date: <?php echo h($device['Brand']) ?> </h3>
-      <h3>Upload Date: <?php echo h($device['Device_name']) ?> </h3>
-      <h3>Upload Date: <?php echo h($device['Spesifies']) ?> </h3>
-      <h3>Launch Date: <?php echo h($device['Lauch_date']) ?> </h3>
+      <h3>Brand: <?php echo h($review['Brand']) ?> </h3>
+      <h3>Model: <?php echo h($review['Device_name']) ?> </h3>
+      <h3>Spesifies: <?php echo h($review['Spesifies']) ?> </h3>
+      <h3>Launch Date: <?php echo h($review['Launch_date']) ?> </h3>
       <h3>Upload Date: <?php echo h($review['Upload_date']) ?> </h3>
       <h3> <?php echo h($review['Content']) ?> </h3>
     </div>

@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS Devices (
   ID_Device INT(11) NOT NULL AUTO_INCREMENT,
   Brand VARCHAR(255) NOT NULL,
   Device_name VARCHAR(255) NOT NULL,
-  Lauch_date DATE NOT NULL,
+  Launch_date DATE NOT NULL,
   Spesifies TEXT NOT NULL,
   PRIMARY KEY (ID_Device)
-);
+)ENGINE=InnoDB;
 
 INSERT INTO Devices(Brand, Device_name, Lauch_date, Spesifies) VALUES
   ('Motorola', 'Moto G7 Plus', '2018/03/23', 'blablablablablabla'),
@@ -33,24 +33,18 @@ INSERT INTO Devices(Brand, Device_name, Lauch_date, Spesifies) VALUES
 DROP TABLE IF EXISTS Reviews;
 CREATE TABLE IF NOT EXISTS Reviews (
   Folio INT(11) NOT NULL AUTO_INCREMENT,
-  ID_User INT(11),
   ID_Device INT(11),
   Upload_date DATE NOT NULL,
-  Last_upload_date DATE NOT NULL,
   Review_name VARCHAR(255) NOT NULL,
   Content TEXT NOT NULL,
+  Image VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (Folio),
+  FOREIGN KEY (ID_Device) REFERENCES Devices (ID_Device)
+) ENGINE=InnoDB;
 
-  KEY FK_User_Review (ID_User),
-  CONSTRAINT FK_User_Review FOREIGN KEY (ID_User) REFERENCES Users (ID_User),
-
-  KEY FK_Device_Review (ID_Device),
-  CONSTRAINT FK_Device_Review FOREIGN KEY (ID_Device) REFERENCES Devices (ID_Device)
-);
-
-INSERT INTO Reviews (ID_user, ID_device, Upload_date, Last_upload_date, Review_name, Content) VALUES
-  ('1', '1', '2019/04/16', '2019/04/16', 'Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '2', '2019/04/10', '2019/04/16', 'The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '3', '2019/04/01', '2019/04/10', 'The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla'),
-  ('1', '4', '2019/03/04', '2019/04/01', 'WTF!', 'BlaBlaBlaBlaBlaBlaBla');
+INSERT INTO Reviews (ID_device, Upload_date, Review_name, Content, Image) VALUES
+  ('1', '2019/04/16', 'Best Motorola Performance', 'BlaBlaBlaBlaBlaBlaBla', 'motoG7.jpg'),
+  ('2', '2019/04/10', 'The Sweet Edge', 'BlaBlaBlaBlaBlaBlaBla', 'GalaxyS105G.jpg'),
+  ('3', '2019/04/01', 'The Luxory Apple', 'BlaBlaBlaBlaBlaBlaBla', 'IphoneXSMax.jpg'),
+  ('4', '2019/03/04', 'WTF!', 'BlaBlaBlaBlaBlaBlaBla', 'u12+.jpg');

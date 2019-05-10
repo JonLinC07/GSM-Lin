@@ -60,7 +60,9 @@
         </div>
 
         <div class="text-area">
-          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value="<?php echo h($device['Spesifies']); ?>"></textarea>
+          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value=""></textarea>
+          <h4>Content Spesifies:</h4>
+          <p><?php echo h($device['Spesifies']); ?></p>
           <input type="submit" name="Create Phone" value="Update Review">
         </div>
       </form>

@@ -49,7 +49,6 @@
               </div>
 
               <p><?php echo h($review['Upload_date']); ?></p>
-              <p><?php echo h($review['Last_upload_date']); ?></p>
             </div>
           </div>
 
@@ -61,7 +60,7 @@
 
             <div class="hide">
               <h6>Preview</h6>
-              <a href="#"><img src="../../Public/Images/Show.png" alt=""></a>
+              <a href="<?php echo url_for('Views/ViewReview.php?id=' . h(u($review['Folio']))) ?>"><img src="../../Public/Images/Show.png" alt=""></a>
             </div>
 
             <div class="hide">

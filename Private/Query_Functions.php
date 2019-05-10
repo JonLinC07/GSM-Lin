@@ -19,11 +19,13 @@
 
   function insert_review($review) {
     global $db;
-    $query = "INSERT INTO Reviews (ID_Device,  Upload_date, Last_upload_date,";
-    $query .= " Review_name, Content, Image) VALUES ";
-    $query .= "(" . $review['ID_Device'] . ", '" . $review['Upload_date'] . "', ";
-    $query .= "'" . $review['Last_upload_date'] . "', '" . $review['Review_name'] . "', ";
-    $query .= "'" . $review['Content'] . "', '" . $review['Image'] . "')";
+
+    $query = "INSERT INTO Reviews (ID_Device, Upload_date, Review_name,";
+    $query .= " Content, Image) VALUES ";
+    $query .= "(" . $review['ID_Device'] . ", '" . $review['Upload_date'] . "', '";
+    $query .= $review['Review_name'] . "', '" . $review['Content'] . "', '";
+    $query .= $review['Image'] . "')";
+
 
     $result = mysqli_query($db, $query);
     if ($result) {
@@ -104,7 +106,7 @@
   function all_info_review($id) {
     global $db;
     $query = "SELECT * FROM Reviews INNER JOIN Devices ON Reviews.ID_Device";
-    $query .= "=Devices.ID_device WHERE Devices.ID_Device='" . $id . "'";
+    $query .= "=Devices.ID_device WHERE Reviews.Folio='" . $id . "'";
     $result = mysqli_query($db, $query);
     confirm_result_set($result);
     $info_review = mysqli_fetch_assoc($result);

@@ -32,7 +32,7 @@
       <h1><?php echo h($device['Device_name']) ?></h1>
       <h2>Brand: <?php echo h($device['Brand']) ?></h2>
       <h3>ID: <?php echo h($device['ID_Device']) ?></h3>
-      <h3>Launch_date: <?php echo h($device['Lauch_date']) ?></h3>
+      <h3>Launnch date: <?php echo h($device['Lauch_date']) ?></h3>
       <h4>Spesifies:</h4>
       <p><?php echo h($device['Spesifies']) ?></p>
     </div>

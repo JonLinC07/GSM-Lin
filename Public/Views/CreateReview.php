@@ -10,9 +10,17 @@
     require_once('../../Private/Initialize.php');
     $review_set = find_all_reviews();
     $review_count = mysqli_num_rows($review_set);
-    mysqli_free_result($review_set);
+    //mysqli_free_result($review_set);
     $review = [];
     $review['ID_Device'] = $review_count;
+
+    $device_set = find_all_devices();
+    $device_count = mysqli_num_rows($device_set);
+    //mysqli_free_result($review_set);
+    $device = [];
+    $device['ID_Device'] = $device_count;
+
+    $current_date =  date("Y")  . "-" . date("m") . "-" . date("d");
    ?>
 
   <body>
@@ -36,20 +44,27 @@
 
       <form class="form-review" action="<?php echo url_for('Views/AddReview.php'); ?>" method="post">
         <div class="infos">
-          <input type="text" name="Review_name" value="" placeholder="Title">
-          <input type="text" name="phone-name" value="" placeholder="Phone Name">
-          <input type="date" name="Upload_date" value="" placeholder="Phone Name">
-          <select class="" name="ID_Device">
-            <?php
-              for ($i=1; $i <= $review_count; $i++) {
-                echo "<option value=\"{$i}\"";
-                if ($review['ID_Device']) {
-                  echo " selected";
+          <input type="text" name="Review_name" value="" placeholder="Review Title">
+          <div class="review-device">
+            <h4>Phone Name:</h4>
+            <select class="" name="ID_Device">
+              <?php
+                while($device = mysqli_fetch_assoc($device_set)) {
+                  echo "<option value=\"{$device['ID_Device']}\"";
+                  if ($device['Device_name']) {
+                    echo " selected";
+                  }
+                  echo ">{$device['Device_name']}</option>";
                 }
-                echo ">{$i}</option>";
-              }
-             ?>
-          </select>
+               ?>
+            </select>
+          </div>
+
+          <div class="review-date">
+            <h4>Date:</h4>
+
+            <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)) ?>" placeholder="">
+          </div>
         </div>
 
         <div class="photo-phone">
