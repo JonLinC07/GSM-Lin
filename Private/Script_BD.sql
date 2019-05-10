@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS 'DB_gsmlin'
+CREATE DATABASES IF NOT EXISTS DB_gsmlin;
 USE DB_gsmlin;
 
 DROP TABLE IF EXISTS Users;
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Devices (
   PRIMARY KEY (ID_Device)
 )ENGINE=InnoDB;
 
-INSERT INTO Devices(Brand, Device_name, Lauch_date, Spesifies) VALUES
+INSERT INTO Devices(Brand, Device_name, Launch_date, Spesifies) VALUES
   ('Motorola', 'Moto G7 Plus', '2018/03/23', 'blablablablablabla'),
   ('Samsung', 'Galaxy S8 Edge', '2018/04/28', 'blablablablablabla'),
   ('Apple', 'iPhone X', '2018/02/14', 'blablablablablabla'),
