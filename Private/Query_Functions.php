@@ -93,10 +93,26 @@
     $query .= "Spesifies='" . $device['Spesifies'] . "' WHERE ID_Device='";
     $query .= $device['ID_Device'] . "' LIMIT 1";
 
-    $resul = mysqli_query($db, $query);
-    if ($resul) {
+    $result = mysqli_query($db, $query);
+    if ($result) {
       return true;
     } else {
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
+
+  function update_review($review) {
+    global $db;
+    $query = "UPDATE Reviews SET Review_name='" . $review['Review_name'] . "', Content='";
+    $query .= $review['Content'] . "', Image='" . $review['Image'] . "' LIMIT 1";
+
+    $result = mysqli_query($db, $query);
+    if ($result) {
+      return true;
+    } else {
+      echo $query;
       echo mysqli_error($db);
       db_disconnect($db);
       exit;

@@ -62,14 +62,14 @@
 
           <div class="review-date">
             <h4>Date:</h4>
-
+            <input type="file" name="este" value="">
             <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)) ?>" placeholder="">
           </div>
         </div>
 
         <div class="photo-phone">
           <h4>Phone Photo</h4>
-          <input type="file" name="Image" value="">
+          <input type="file" name="Image">
         </div>
 
         <div class="text-review">

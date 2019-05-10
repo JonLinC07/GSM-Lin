@@ -21,7 +21,7 @@
       $device['ID_Device'] = $id;
       $device['Brand'] = $_POST['Brand'] ?? '';
       $device['Device_name'] = $_POST['Device_name'] ?? '';
-      $device['Lauch_date'] = $_POST['Launch_date'] ?? '';
+      $device['Launch_date'] = $_POST['Launch_date'] ?? '';
       $device['Spesifies'] = $_POST['Spesifies'] ?? '';
 
       $result = update_device($device);
@@ -52,17 +52,15 @@
     <div class="create-device">
       <h1>EDIT PHONE</h1>
 
-      <form class="" action="<?php echo url_for('Views/Edit.php?id=' . h(u($id))); ?>" method="post">
+      <form class="" action="<?php echo url_for('Views/EditPhones.php?id=' . h(u($id))); ?>" method="post">
         <div class="inputs-devices">
           <input type="text" name="Device_name" placeholder="Device Name" value="<?php echo h($device['Device_name']); ?>">
           <input type="text" name="Brand" placeholder="Brand" value="<?php echo h($device['Brand']); ?>">
-          <input type="date" name="Launch_date" placeholder="Launch Date" value="<?php echo h($device['Lauch_date']); ?>">
+          <input type="date" name="Launch_date" placeholder="Launch Date" value="<?php echo h($device['Launch_date']); ?>">
         </div>
 
         <div class="text-area">
-          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value=""></textarea>
-          <h4>Content Spesifies:</h4>
-          <p><?php echo h($device['Spesifies']); ?></p>
+          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value=""><?php echo h($device['Spesifies']); ?></textarea>
           <input type="submit" name="Create Phone" value="Update Review">
         </div>
       </form>

@@ -12,7 +12,6 @@
   </head>
 
   <body>
-
       <div class="headers">
 
       </div>
@@ -55,7 +54,7 @@
           <div class="to-hidden">
             <div class="hide">
               <h6>Edit</h6>
-              <a href="#"><img src="../../Public/Images/Edit.png" alt=""></a>
+              <a href="<?php echo url_for('Views/EditReviews.php?id=' . h(u($review['Folio']))) ?>"><img src="../../Public/Images/Edit.png" alt=""></a>
             </div>
 
             <div class="hide">

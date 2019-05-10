@@ -48,14 +48,14 @@
                 </div>
 
                 <p>Brand: <?php echo h($device['Brand']); ?></p>
-                <p>Launch Date: <?php echo h($device['Lauch_date']); ?></p>
+                <p>Launch Date: <?php echo h($device['Launch_date']); ?></p>
               </div>
             </div>
 
             <div class="device-hidden">
               <div class="hide">
                 <h6>Edit</h6>
-                <a href="<?php echo url_for('Views/Edit.php?id=' . h(u($device['ID_Device']))) ?>"><img src="../../Public/Images/Edit.png" alt=""></a>
+                <a href="<?php echo url_for('Views/EditPhones.php?id=' . h(u($device['ID_Device']))) ?>"><img src="../../Public/Images/Edit.png" alt=""></a>
               </div>
 
               <div class="hide">
