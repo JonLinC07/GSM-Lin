@@ -22,9 +22,15 @@
       $reviews['Upload_date'] = $_POST['Upload_date'] ?? '';
       $reviews['Review_name'] = $_POST['Review_name'] ?? '';
       $reviews['Content'] = $_POST['Content'] ?? '';
-      $reviews['Image'] = $_POST['Image'] ?? '';
-      //$reviews['ID_Device'] = $_POST['ID_device']
+      $reviews['Image'] = $_FILES['Image']['name'] ?? '';
 
+      if (empty($reviews['Image'])) {
+        $reviews['Image'] = $_POST['Current_image'];
+      } else {
+        $image_data = $_FILES['Image']['tmp_name'] ?? '';
+        $upload_image = 'C:/wamp64/www'. WWW_ROOT . '/Images/Phones/' . $reviews['Image'];
+        move_uploaded_file($image_data, $upload_image);
+      }
 
       $result = update_review($reviews);
       redirect_to(url_for('Views/ViewReview.php?id=' . $id));
@@ -50,12 +56,12 @@
       <a href="About.php"> GSM Lin </a>
     </nav>
 
-    <!---         CONTENIDO         --->
+    <!--        CONTENIDO         -->
 
     <div class="content-create">
       <h2>CREATING REVIEW</h2>
 
-      <form class="form-review" action="<?php echo url_for('Views/EditReviews.php?id=' . h(u($id))); ?>" method="post">
+      <form class="form-review" action="<?php echo url_for('Views/EditReviews.php?id=' . h(u($id))); ?>" method="post" enctype="multipart/form-data">
         <div class="infos">
           <input type="text" name="Review_name" value="<?php echo h($review['Review_name']); ?>" placeholder="Review Title">
           <div class="review-device">
@@ -75,7 +81,6 @@
 
           <div class="review-date">
             <h4>Date:</h4>
-
             <input type="date" name="Upload_date" value="<?php echo h($review['Upload_date']) ?>" placeholder="">
           </div>
         </div>
@@ -83,6 +88,7 @@
         <div class="photo-phone">
           <h4>Phone Photo</h4>
           <input type="file" name="Image" value="">
+          <input type="hidden" name="Current_image" value="<?php echo h($review['Image']) ?>">
         </div>
 
         <div class="text-review">

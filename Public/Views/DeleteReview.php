@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../CSS/Stylesheet.css">
-    <title>Delete Phone</title>
+    <title>Delete Review</title>
   </head>
 
   <?php
     require_once('../../Private/Initialize.php');
     if (!isset($_GET['id'])) {
-      redirect_to(url_for('Views/Phones.php'));
+      redirect_to(url_for('Views/Index.php'));
     }
     $id = $_GET['id'] ?? '1';
-    $device = find_device_by_id($id);
+    $review = all_info_review($id);
 
     if (is_post_request()) {
-      $result = delete_device($id);
-      redirect_to(url_for('Views/Phones.php'));
+      $result = delete_review($id);
+      redirect_to(url_for('Views/Index.php'));
     }
    ?>
 
@@ -37,14 +37,16 @@
   <!---         CONTENIDO         --->
 
     <div class="view-device">
-      <h1>Delete <?php echo h($device['Device_name']) ?>?</h1>
-      <h2>Brand: <?php echo h($device['Brand']) ?></h2>
-      <h3>ID: <?php echo h($device['ID_Device']) ?></h3>
+      <h1>Delete <?php echo h($review['Review_name']) ?>?</h1>
+      <h2> Folio:<?php echo h($review['Folio']) ?></h2>
+      <h2> Device name:<?php echo h($review['Device_name']) ?></h2>
+      <h3>Brand: <?php echo h($review['Brand']) ?></h3>
+      <h3>Device Spesifies: <?php echo h($review['Spesifies']) ?></h3>
+      <h3>review Content: <?php echo h($review['Content']) ?></h3>
     </div>
 
-    <form class="" action="<?php echo url_for('Views/Delete.php?id=' . h(u($device['ID_Device']))); ?>" method="post">
+    <form class="" action="<?php echo url_for('Views/DeleteReview.php?id=' . h(u($review['Folio']))); ?>" method="post">
       <input type="submit" name="Delete" value="Delete Phone">
     </form>
-
   </body>
 </html>

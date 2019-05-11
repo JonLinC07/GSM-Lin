@@ -37,12 +37,12 @@
       <a href="About.php"> GSM Lin </a>
     </nav>
 
-<!---         CONTENIDO         --->
+<!--         CONTENIDO         -->
 
     <div class="content-create">
       <h2>CREATING REVIEW</h2>
 
-      <form class="form-review" action="<?php echo url_for('Views/AddReview.php'); ?>" method="post">
+      <form class="form-review" action="<?php echo url_for('Views/AddReview.php'); ?>" method="post" enctype="multipart/form-data">
         <div class="infos">
           <input type="text" name="Review_name" value="" placeholder="Review Title">
           <div class="review-device">
@@ -62,14 +62,13 @@
 
           <div class="review-date">
             <h4>Date:</h4>
-            <input type="file" name="este" value="">
-            <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)) ?>" placeholder="">
+            <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)); ?>" placeholder="">
           </div>
         </div>
 
         <div class="photo-phone">
           <h4>Phone Photo</h4>
-          <input type="file" name="Image">
+          <input type="file" name="Image"/>
         </div>
 
         <div class="text-review">

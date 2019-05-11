@@ -64,7 +64,7 @@
 
             <div class="hide">
               <h6>Delete</h6>
-              <a href="#"><img src="../../Public/Images/Delete.png" alt=""></a>
+              <a href="<?php echo url_for('Views/DeleteReview.php?id=' . h(u($review['Folio']))) ?>"><img src="../../Public/Images/Delete.png" alt=""></a>
             </div>
           </div>
         </div>

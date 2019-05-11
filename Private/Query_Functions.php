@@ -86,6 +86,20 @@
     }
   }
 
+  function delete_review($folio) {
+    global $db;
+    $query = "DELETE FROM Reviews WHERE Folio='" . $folio . "' LIMIT 1";
+    $result = mysqli_query($db, $query);
+
+    if ($result) {
+      return true;
+    } else {
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
+
   function update_device($device) {
     global $db;
     $query = "UPDATE Devices SET Brand='" . $device['Brand'] . "', Device_name='";
@@ -106,13 +120,13 @@
   function update_review($review) {
     global $db;
     $query = "UPDATE Reviews SET Review_name='" . $review['Review_name'] . "', Content='";
-    $query .= $review['Content'] . "', Image='" . $review['Image'] . "' LIMIT 1";
+    $query .= $review['Content'] . "', Image='" . $review['Image'] . "' WHERE Folio=";
+    $query .= $review['Folio'] . " LIMIT 1";
 
     $result = mysqli_query($db, $query);
     if ($result) {
       return true;
     } else {
-      echo $query;
       echo mysqli_error($db);
       db_disconnect($db);
       exit;
