@@ -7,13 +7,18 @@
   </head>
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
+
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
     $device_set = find_all_devices();
   ?>
 
     <body>
       <div class="headers">
         <header>
-          <!-- <img src="Images/Logo2.png" alt="GSM Lin"> -->
+
         </header>
       </div>
 

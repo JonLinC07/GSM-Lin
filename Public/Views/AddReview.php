@@ -1,5 +1,10 @@
 <?php
   require_once('../../Private/Initialize.php');
+  session_start();
+
+  if (!Session_Validator()) {
+    redirect_to(url_for('/Views/Login.php'));
+  }
 
   if (is_post_request()) {
     $review = [];
@@ -12,7 +17,6 @@
 
     $upload_image = 'C:/wamp64/www'. WWW_ROOT . '/Images/Phones/' . $review['Image'];
     move_uploaded_file($image_data, $upload_image);
-
 
     $result = insert_review($review);
     $new_id = mysqli_insert_id($db);

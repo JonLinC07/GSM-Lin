@@ -423,3 +423,37 @@ body {
 .view-device p {
   margin-top: 1%;
 }
+
+/*         LOGIN          */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+  width: 98%;
+}
+
+.login h1 {
+  margin-bottom: 2%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border-style: groove;
+  box-shadow: 10px 10px 5px grey;
+  width: 50%;
+  height: 280px;
+}
+
+.login-form input {
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+#submit {
+  width: 25%;
+}

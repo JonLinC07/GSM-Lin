@@ -146,7 +146,7 @@
 
   function get_user($user, $pass) {
     global $db;
-    $query = "SELECT * FROM Users WHERE User_name='" . $user . "' AND ";
+    $query = "SELECT * FROM Users WHERE Nick_name='" . $user . "' AND ";
     $query .= "Password='" . $pass . "';";
     $result = mysqli_query($db, $query);
     confirm_result_set($result);

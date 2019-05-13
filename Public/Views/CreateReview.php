@@ -8,6 +8,12 @@
 
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
+
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
+    
     $review_set = find_all_reviews();
     $review_count = mysqli_num_rows($review_set);
     //mysqli_free_result($review_set);

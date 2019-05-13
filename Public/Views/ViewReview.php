@@ -8,6 +8,11 @@
 
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
+
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
 
     $id = $_GET['id'] ?? '1';
     $review = all_info_review($id);

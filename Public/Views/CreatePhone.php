@@ -8,6 +8,12 @@
 
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
+
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
+    
     $device_set = find_all_devices();
     $device_count = mysqli_num_rows($device_set);
     mysqli_free_result($device_set);

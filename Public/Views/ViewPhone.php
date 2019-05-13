@@ -8,6 +8,12 @@
 
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
+
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
+    
     $id = $_GET['id'] ?? '1';
     $device = find_device_by_id($id);
    ?>

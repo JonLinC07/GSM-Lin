@@ -8,7 +8,12 @@
 
   <?php
     require_once('../../Private/Initialize.php');
+    session_start();
 
+    if (!Session_Validator()) {
+      redirect_to(url_for('/Views/Login.php'));
+    }
+    
     if (!isset($_GET['id'])) {
       redirect_to(url_for('Views/Phones.php'));
     }
