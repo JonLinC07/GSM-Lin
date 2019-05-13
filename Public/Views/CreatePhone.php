@@ -13,7 +13,7 @@
     if (!Session_Validator()) {
       redirect_to(url_for('/Views/Login.php'));
     }
-    
+
     $device_set = find_all_devices();
     $device_count = mysqli_num_rows($device_set);
     mysqli_free_result($device_set);
@@ -29,9 +29,7 @@
     <nav class="menu-bar">
       <a href="Index.php"> REVIEWS </a>
       <a href="Phones.php"> PHONES </a>
-      <a href="Android.php"> ANDROID </a>
-      <a href="Ios.php"> iOS </a>
-      <a href="Login.php"> LOGIN </a>
+      <a href="CloseSession.php"> LOGOUT </a>
       <a href="About.php"> GSM Lin </a>
     </nav>
 

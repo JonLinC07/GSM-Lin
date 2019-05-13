@@ -32,11 +32,6 @@
     </div>
 
     <nav class="menu-bar">
-      <a href="Index.php"> HOME </a>
-      <a href="Phones.php"> PHONES </a>
-      <a href="Android.php"> ANDROID </a>
-      <a href="Ios.php"> iOS </a>
-      <a href="Login.php"> LOGIN </a>
       <a href="About.php"> GSM Lin </a>
     </nav>
 
@@ -46,8 +41,8 @@
       <form class="login-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <h3>User Name</h3>
         <input type="text" name="User" value="" placeholder="User Name">
-        <h3>password</h3>
-        <input type="password" name="Pass" value="" placeholder="passwords">
+        <h3>Password</h3>
+        <input type="password" name="Pass" value="" placeholder="Passwords">
         <input type="submit" name="" value="Login" id="submit">
       </form>
     </div>
