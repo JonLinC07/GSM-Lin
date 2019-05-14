@@ -152,4 +152,12 @@
     confirm_result_set($result);
     return $result;
   }
+
+  function device_image($ID_Device) {
+    global $db;
+    $query = "SELECT Image FROM Reviews WHERE ID_Device =" . $ID_Device;
+    $result = mysqli_query($db, $query);
+    confirm_result_set($result);
+    return $result;
+  }
  ?>

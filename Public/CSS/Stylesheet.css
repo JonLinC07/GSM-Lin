@@ -324,19 +324,20 @@ body {
 
 .content-device {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   width: 98%;
 }
 
 .device {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 2%;
   padding: 1%;
-  width: 40%;
+  width: 75%;
   height: 240px;
   border-radius: 5px;
   border-style: groove;
@@ -409,7 +410,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 2%;
+  margin: 1%;
   width: 50%;
   border-radius: 5px;
   border-style: groove;
@@ -417,11 +418,26 @@ body {
 }
 
 .view-device h1, h2, h3 {
-  margin: 2%;
+  margin: 1%;
 }
 
 .view-device p {
   margin-top: 1%;
+}
+
+.info-device img {
+  width: 450px;
+}
+
+.info-device {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  width: 75%;
+}
+
+#spesifies {
+  font-size: 2em;
 }
 
 /*         LOGIN          */

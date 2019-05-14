@@ -23,7 +23,7 @@
       </div>
 
       <nav class="menu-bar">
-        <a href="Index.php"> HOME </a>
+        <a href="Index.php"> REVIEWS </a>
         <a href="Phones.php"> PHONES </a>
         <a href="CloseSession.php"> LOGOUT </a>
         <a href="About.php"> GSM Lin </a>
@@ -42,7 +42,6 @@
 
         <div class="device">
           <div class="to-show">
-
             <div class="info-review">
               <div class="title">
                   <h3><?php echo h($device['Device_name']); ?></h3>
