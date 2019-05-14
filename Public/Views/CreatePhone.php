@@ -40,14 +40,14 @@
 
       <form class="" action="<?php echo url_for('Views/AddPhone.php'); ?>" method="post">
         <div class="inputs-devices">
-          <input type="text" name="Device_name" placeholder="Device Name">
-          <input type="text" name="Brand" placeholder="Brand">
-          <input type="date" name="Launch_date" placeholder="Launch Date">
+          <input type="text" name="Device_name" placeholder="Device Name" required>
+          <input type="text" name="Brand" placeholder="Brand" required>
+          <input type="date" name="Launch_date" placeholder="Launch Date" required>
         </div>
 
         <div class="text-area">
-          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device"></textarea>
-          <input type="submit" name="Create Phone" value="Create Review">
+          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" required></textarea>
+          <input type="submit" name="Create Phone" value="Create Phone">
         </div>
       </form>
     </div>

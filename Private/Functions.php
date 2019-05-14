@@ -49,4 +49,18 @@
     return $_SERVER['REQUEST_METHOD'] == 'GET';
   }
 
+  //VALIDATIONS
+
+  function validate_review($review) {
+    $error = "";
+    if (strlen($review['Review_name']) < 3 || strlen($review['Content']) < 3) {
+      $error .= "Invalid field whit less of 3 chars";
+    }
+
+    if (empty($review['Review_name'])) {
+      $error .= "Whitout upload date";
+    }
+
+  }
+
  ?>

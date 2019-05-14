@@ -50,7 +50,7 @@
     </div>
 
     <form class="" action="<?php echo url_for('Views/DeleteReview.php?id=' . h(u($review['Folio']))); ?>" method="post">
-      <input type="submit" name="Delete" value="Delete Phone">
+      <input type="submit" name="Delete" value="Delete Review">
     </form>
   </body>
 </html>

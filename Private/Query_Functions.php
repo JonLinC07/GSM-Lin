@@ -40,9 +40,9 @@
   function insert_device($device) {
     global $db;
 
-    $query = "INSERT INTO Devices (Brand, Device_name, Lauch_date, Spesifies)";
+    $query = "INSERT INTO Devices (Brand, Device_name, Launch_date, Spesifies)";
     $query .= " VALUES ('" . $device['Brand'] . "', '" . $device['Device_name'];
-    $query .= "', '" . $device['Lauch_date'] . "', '" . $device['Spesifies'] . "')";
+    $query .= "', '" . $device['Launch_date'] . "', '" . $device['Spesifies'] . "')";
 
     $result = mysqli_query($db, $query);
     if ($result) {
@@ -103,7 +103,7 @@
   function update_device($device) {
     global $db;
     $query = "UPDATE Devices SET Brand='" . $device['Brand'] . "', Device_name='";
-    $query .= $device['Device_name'] . "', Lauch_date='" . $device['Lauch_date'] . "', ";
+    $query .= $device['Device_name'] . "', Launch_date='" . $device['Launch_date'] . "', ";
     $query .= "Spesifies='" . $device['Spesifies'] . "' WHERE ID_Device='";
     $query .= $device['ID_Device'] . "' LIMIT 1";
 
@@ -160,4 +160,35 @@
     confirm_result_set($result);
     return $result;
   }
+
+  //VALIDATIONS
+
+  function unique_review($review) {
+    global $db;
+    $query = "SELECT * FROM Reviews WHERE Review_name = '" . $review . "'";
+    $result = mysqli_query($db, $query);
+    confirm_result_set($result);
+    $result = mysqli_fetch_assoc($result);
+
+    if (!empty($result['Review_name']) ) {
+      return "This Review is already exist <br>";
+    } else {
+      return '';
+    }
+  }
+
+  function unique_device($device) {
+    global $db;
+    $queey = "SELECT * FROM Devices WHERE Device_name = '" . $device . "'";
+    $result = mysqli_query($db, $queey);
+    confirm_result_set($result);
+    $result mysqli_fetch_assoc($result);
+
+    if (!empty($result['Device_name'])) {
+      return "This device is alrready exist";
+    } else {
+      return '';
+    }
+  }
+
  ?>

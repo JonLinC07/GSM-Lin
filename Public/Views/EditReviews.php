@@ -66,7 +66,7 @@
 
       <form class="form-review" action="<?php echo url_for('Views/EditReviews.php?id=' . h(u($id))); ?>" method="post" enctype="multipart/form-data">
         <div class="infos">
-          <input type="text" name="Review_name" value="<?php echo h($review['Review_name']); ?>" placeholder="Review Title">
+          <input type="text" name="Review_name" value="<?php echo h($review['Review_name']); ?>" placeholder="Review Title" required>
           <div class="review-device">
             <h4>Phone Name:</h4>
             <select class="" name="ID_Device">
@@ -84,7 +84,7 @@
 
           <div class="review-date">
             <h4>Date:</h4>
-            <input type="date" name="Upload_date" value="<?php echo h($review['Upload_date']) ?>" placeholder="">
+            <input type="date" name="Upload_date" value="<?php echo h($review['Upload_date']) ?>" placeholder="" required>
           </div>
         </div>
 
@@ -95,8 +95,8 @@
         </div>
 
         <div class="text-review">
-          <textarea name="Content" rows="20" cols="80" placeholder="Write the review content"><?php echo h($review['Content']); ?></textarea>
-          <input type="submit" value="Create Review" />
+          <textarea name="Content" rows="20" cols="80" placeholder="Write the review content" required><?php echo h($review['Content']); ?></textarea>
+          <input type="submit" value="Update Review" />
         </div>
       </form>
     </div>

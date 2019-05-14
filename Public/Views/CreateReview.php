@@ -48,7 +48,7 @@
 
       <form class="form-review" action="<?php echo url_for('Views/AddReview.php'); ?>" method="post" enctype="multipart/form-data">
         <div class="infos">
-          <input type="text" name="Review_name" value="" placeholder="Review Title">
+          <input type="text" name="Review_name" value="" placeholder="Review Title" required>
           <div class="review-device">
             <h4>Phone Name:</h4>
             <select class="" name="ID_Device">
@@ -66,17 +66,17 @@
 
           <div class="review-date">
             <h4>Date:</h4>
-            <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)); ?>" placeholder="">
+            <input type="date" name="Upload_date" value="<?php echo date('Y-m-d', strtotime($current_date)); ?>" placeholder="" required>
           </div>
         </div>
 
         <div class="photo-phone">
           <h4>Phone Photo</h4>
-          <input type="file" name="Image"/>
+          <input type="file" name="Image"/ required>
         </div>
 
         <div class="text-review">
-          <textarea name="Content" rows="20" cols="80" placeholder="Write the review content"></textarea>
+          <textarea name="Content" rows="20" cols="80" placeholder="Write the review content" required></textarea>
           <input type="submit" value="Create Review" />
         </div>
       </form>

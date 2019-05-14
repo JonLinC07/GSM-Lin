@@ -57,14 +57,14 @@
 
       <form class="" action="<?php echo url_for('Views/EditPhones.php?id=' . h(u($id))); ?>" method="post">
         <div class="inputs-devices">
-          <input type="text" name="Device_name" placeholder="Device Name" value="<?php echo h($device['Device_name']); ?>">
-          <input type="text" name="Brand" placeholder="Brand" value="<?php echo h($device['Brand']); ?>">
-          <input type="date" name="Launch_date" placeholder="Launch Date" value="<?php echo h($device['Launch_date']); ?>">
+          <input type="text" name="Device_name" placeholder="Device Name" value="<?php echo h($device['Device_name']); ?>" required>
+          <input type="text" name="Brand" placeholder="Brand" value="<?php echo h($device['Brand']); ?>" required>
+          <input type="date" name="Launch_date" placeholder="Launch Date" value="<?php echo h($device['Launch_date']); ?>" required>
         </div>
 
         <div class="text-area">
-          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value=""><?php echo h($device['Spesifies']); ?></textarea>
-          <input type="submit" name="Create Phone" value="Update Review">
+          <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value="" required><?php echo h($device['Spesifies']); ?></textarea>
+          <input type="submit" name="Create Phone" value="Update Phone">
         </div>
       </form>
     </div>

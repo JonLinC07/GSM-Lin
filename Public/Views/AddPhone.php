@@ -10,7 +10,7 @@
     $device = [];
     $device['Brand'] = $_POST['Brand'];
     $device['Device_name'] = $_POST['Device_name'];
-    $device['Lauch_date'] = $_POST['Launch_date'];
+    $device['Launch_date'] = $_POST['Launch_date'];
     $device['Spesifies'] = $_POST['Spesifies'];
 
     $result = insert_device($device);

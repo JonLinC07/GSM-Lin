@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ required<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -40,9 +40,9 @@
 
       <form class="login-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <h3>User Name</h3>
-        <input type="text" name="User" value="" placeholder="User Name">
+        <input type="text" name="User" value="" placeholder="User Name" required>
         <h3>Password</h3>
-        <input type="password" name="Pass" value="" placeholder="Passwords">
+        <input type="password" name="Pass" value="" placeholder="Passwords" required>
         <input type="submit" name="" value="Login" id="submit">
       </form>
     </div>
