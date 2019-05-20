@@ -53,14 +53,25 @@
 
   function validate_review($review) {
     $error = "";
-    if (strlen($review['Review_name']) < 3 || strlen($review['Content']) < 3) {
-      $error .= "Invalid field whit less of 3 chars";
+    if (strlen($review['Review_name']) < 3 || strlen($review['Content']) < 10) {
+      $error .= "Invalid field with few input chars ";
     }
 
-    if (empty($review['Review_name'])) {
+    if (empty($review['Upload_date'])) {
       $error .= "Whitout upload date";
     }
 
+    $error .= unique_review($review['Review_name']);
+    return $error;
   }
 
+  function validate_device($device) {
+    $error .= "";
+    if (strlen($device['Device_name']) < 3 || strlen($device['Brand']) < 3 || strlen($device['Spesifies']) < 10) {
+      $error .= "Inputs with few chars ";
+    }
+
+    $error .= unique_device($device);
+    return $error;
+  }
  ?>

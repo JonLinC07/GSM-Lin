@@ -29,6 +29,11 @@
       $device['Launch_date'] = $_POST['Launch_date'] ?? '';
       $device['Spesifies'] = $_POST['Spesifies'] ?? '';
 
+      $error = validate_device($device);
+      if (strlen($error) > 0) {
+        redirect_to(url_for('Views/EditDevice.php?error=' . $error . '&id=' . $id));
+      }
+
       $result = update_device($device);
       redirect_to(url_for('Views/ViewPhone.php?id=' . $id));
     } else {
@@ -63,6 +68,11 @@
         </div>
 
         <div class="text-area">
+          <?php
+            if (strlen($error) > 0) {
+              echo '<div class="errors"><p>' . $error . '</p></div>';
+            }
+           ?>
           <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" value="" required><?php echo h($device['Spesifies']); ?></textarea>
           <input type="submit" name="Create Phone" value="Update Phone">
         </div>

@@ -15,6 +15,11 @@
     $review['Image'] = $_FILES['Image']['name'] ?? '';
     $image_data = $_FILES['Image']['tmp_name'] ?? '';
 
+    $error = validate_review($review);
+    if (strlen($error) > 0) {
+      redirect_to(url_for('Views/CreateReview.php?error=' . $error));
+    }
+
     $upload_image = 'C:/wamp64/www'. WWW_ROOT . '/Images/Phones/' . $review['Image'];
     move_uploaded_file($image_data, $upload_image);
 

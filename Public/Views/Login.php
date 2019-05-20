@@ -1,4 +1,4 @@
- required<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -46,6 +46,5 @@
         <input type="submit" name="" value="Login" id="submit">
       </form>
     </div>
-
   </body>
 </html>

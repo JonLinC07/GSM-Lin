@@ -29,6 +29,11 @@
       $reviews['Content'] = $_POST['Content'] ?? '';
       $reviews['Image'] = $_FILES['Image']['name'] ?? '';
 
+      $error = validate_review($reviews);
+      if (strlen($error) > 0) {
+        redirect_to(url_for('Views/EditReviews.php?error=' . $error . '&id=' . $id));
+      }
+
       if (empty($reviews['Image'])) {
         $reviews['Image'] = $_POST['Current_image'];
       } else {
@@ -62,7 +67,7 @@
     <!--        CONTENIDO         -->
 
     <div class="content-create">
-      <h2>CREATING REVIEW</h2>
+      <h2>UPDATING REVIEW</h2>
 
       <form class="form-review" action="<?php echo url_for('Views/EditReviews.php?id=' . h(u($id))); ?>" method="post" enctype="multipart/form-data">
         <div class="infos">
@@ -95,6 +100,11 @@
         </div>
 
         <div class="text-review">
+          <?php
+            if (strlen($error) > 0) {
+              echo '<div class="errors"><p>' . $error . '</p></div>';
+            }
+           ?>
           <textarea name="Content" rows="20" cols="80" placeholder="Write the review content" required><?php echo h($review['Content']); ?></textarea>
           <input type="submit" value="Update Review" />
         </div>

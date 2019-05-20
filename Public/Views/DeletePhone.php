@@ -46,7 +46,7 @@
       <h3>ID: <?php echo h($device['ID_Device']) ?></h3>
     </div>
 
-    <form class="" action="<?php echo url_for('Views/Delete.php?id=' . h(u($device['ID_Device']))); ?>" method="post">
+    <form class="" action="<?php echo url_for('Views/DeletePhone.php?id=' . h(u($device['ID_Device']))); ?>" method="post">
       <input type="submit" name="Delete" value="Delete Phone">
     </form>
   </body>

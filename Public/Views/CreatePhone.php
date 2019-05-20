@@ -19,6 +19,7 @@
     mysqli_free_result($device_set);
     $device = [];
     $device['Device_name'] = $device_count;
+    $error = $_GET['error'] ?? '';
    ?>
 
   <body>
@@ -46,6 +47,11 @@
         </div>
 
         <div class="text-area">
+          <?php
+            if (strlen($error)) {
+              echo '<div class="errors"><p>' . $error . '</p></div>';
+            }
+           ?>
           <textarea name="Spesifies" rows="8" cols="80" placeholder="Write the Spesifies of device" required></textarea>
           <input type="submit" name="Create Phone" value="Create Phone">
         </div>

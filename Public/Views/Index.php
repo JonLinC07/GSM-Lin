@@ -72,9 +72,7 @@
           </div>
         </div>
       <?php } ?>
-
     </div>
-
     <?php mysqli_free_result($reviews_set); ?>
   </body>
 </html>

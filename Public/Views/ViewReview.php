@@ -45,7 +45,6 @@
       <h3>Upload Date: <?php echo h($review['Upload_date']) ?> </h3>
       <h3> <?php echo h($review['Content']) ?> </h3>
     </div>
-
   </div>
   </body>
 </html>

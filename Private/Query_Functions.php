@@ -170,7 +170,7 @@
     confirm_result_set($result);
     $result = mysqli_fetch_assoc($result);
 
-    if (!empty($result['Review_name']) ) {
+    if (!empty($result['Review_name'])) {
       return "This Review is already exist <br>";
     } else {
       return '';
@@ -182,7 +182,7 @@
     $queey = "SELECT * FROM Devices WHERE Device_name = '" . $device . "'";
     $result = mysqli_query($db, $queey);
     confirm_result_set($result);
-    $result mysqli_fetch_assoc($result);
+    $result = mysqli_fetch_assoc($result);
 
     if (!empty($result['Device_name'])) {
       return "This device is alrready exist";

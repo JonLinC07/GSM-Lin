@@ -19,6 +19,7 @@
     //mysqli_free_result($review_set);
     $review = [];
     $review['ID_Device'] = $review_count;
+    $error = $_GET['error'] ?? '';
 
     $device_set = find_all_devices();
     $device_count = mysqli_num_rows($device_set);
@@ -75,12 +76,17 @@
           <input type="file" name="Image"/ required>
         </div>
 
+        <?php
+          if (strlen($error) > 0) {
+            echo '<div class="error"><p>' . $error . '</p></div>';
+          }
+         ?>
+
         <div class="text-review">
           <textarea name="Content" rows="20" cols="80" placeholder="Write the review content" required></textarea>
           <input type="submit" value="Create Review" />
         </div>
       </form>
-
     </div>
   </body>
 </html>
